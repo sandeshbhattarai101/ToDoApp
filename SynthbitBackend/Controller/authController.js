@@ -27,17 +27,19 @@ export const login = async(req, res)=>{
         res.send("User not found")
     }
 
-    const isCorrect = bcrypt.compare(req.body.password, user[0].password)
+    const isCorrect = bcrypt.compareSync(req.body.password, user[0].password)
 
-    if(!isCorrect){
-        res.send("Wrong Credentials")
+    if(isCorrect){
+        
+            const token = jwt.sign({id : user[0]._id}, process.env.SECRETKEY)
+        
+            res.cookie("token", token).status(200).json({
+                message: "Login Successfull"  
+            })
+    }else{
+        res.status(400).json("Wrong Credentials")
+
     }
-
-    const token = jwt.sign({id : user[0]._id}, process.env.SECRETKEY)
-
-    res.cookie("token", token).status(200).json({
-        message: "Login Successfull"  
-    })
 }
 
 
