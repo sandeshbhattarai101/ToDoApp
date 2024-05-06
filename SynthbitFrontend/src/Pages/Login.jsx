@@ -32,7 +32,7 @@ useEffect(()=>{
 
 const handlelogin = async(e)=>{
   e.preventDefault();
-  const res = await axios.post("/auth/login",{email,password},{
+  const res = await axios.post("https://to-do-app-backend-zeta.vercel.app/api/auth/login",{email,password},{
     withCredentials: true,
   })
 
