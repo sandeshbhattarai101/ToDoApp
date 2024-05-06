@@ -49,15 +49,3 @@ export const logout = async(req, res)=>{
         message : "User logged out successfully"
     })
 }
-
-// export const authGoogle =()=>{
-//     passport.authenticate('google', { scope: ['email', 'profile'] })
-// }
-
-// export const authGoogleCallback =()=>{
-//      passport.authenticate('google', { 
-//         successRedirect: "http://localhost:5173/dashboard",
-//         failureRedirect: 'http://localhost:5173/login'
-
-//     })
-// }
