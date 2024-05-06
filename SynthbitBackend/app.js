@@ -54,6 +54,12 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
+// To check in vercel
+
+app.get("/", (req,res)=>{
+  res.json("Hello!! This is ToDoApp Server")
+})
+
 // Routes
 app.use("/api/auth", authRoute);
 app.use("/api/task", taskRoute); // Corrected: Use taskRoute for /api/task
