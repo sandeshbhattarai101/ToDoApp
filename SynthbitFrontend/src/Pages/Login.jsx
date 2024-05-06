@@ -13,7 +13,7 @@ const [user, setUser] = useState({});
 
 useEffect(()=>{
   const getUser =  async ()=>{
-    const res =  await axios.get("http://localhost:3000/api/auth/login/success",{
+    const res =  await axios.get("/auth/login/success",{
      withCredentials: true,
    })
   //  console.log(res);
@@ -32,7 +32,7 @@ useEffect(()=>{
 
 const handlelogin = async(e)=>{
   e.preventDefault();
-  const res = await axios.post("http://localhost:3000/api/auth/login",{email,password},{
+  const res = await axios.post("/auth/login",{email,password},{
     withCredentials: true,
   })
 
@@ -46,7 +46,7 @@ const handlelogin = async(e)=>{
 
 const handleGoogle = async(e)=>{
 
-  const googleLoginURL = "http://localhost:3000/api/auth/google"
+  const googleLoginURL = "/auth/google"
 
 // _blank opens new window
   const newWindow = window.open(googleLoginURL,"_self");

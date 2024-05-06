@@ -7,7 +7,11 @@ export default function Navbar({user}) {
   const navigate = useNavigate();
 
   const handleLogout = async()=>{
-   const res =  await axios.get('http://localhost:3000/api/auth/logout',{
+    // WE ARE USING proxy in package.json so no need to use http://localhost:3000/api/
+  //  const res =  await axios.get('http://localhost:3000/api/auth/logout',{
+  //     withCredentials: true
+  //   })
+   const res =  await axios.get('/auth/logout',{
       withCredentials: true
     })
 

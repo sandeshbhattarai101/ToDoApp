@@ -12,7 +12,7 @@ export default function Signup() {
 
 const handlelogin = async(e)=>{
   e.preventDefault();
-  const res = await axios.post("http://localhost:3000/api/auth/signup",{email, username, password},{
+  const res = await axios.post("/auth/signup",{email, username, password},{
     withCredentials: true,
   })
 
