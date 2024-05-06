@@ -17,7 +17,7 @@ export default function Dashboard() {
   
     useEffect(()=>{
       const getUser = async()=>{
-        const response = await axios.get('http://localhost:3000/api/user',{
+        const response = await axios.get('https://to-do-app-backend-zeta.vercel.app/api/user',{
           withCredentials : true
         })
         //  console.log(response.data.user)
@@ -38,7 +38,7 @@ export default function Dashboard() {
     
         const handleTask = async(e)=>{
           e.preventDefault();
-          const res = await axios.post("/task/add",{name, description},{
+          const res = await axios.post("https://to-do-app-backend-zeta.vercel.app/api/task/add",{name, description},{
             withCredentials: true,
           })
           if (res.status == 200) {
@@ -59,7 +59,7 @@ export default function Dashboard() {
           // console.log(status);
           const id = e.currentTarget.value;
           // console.log(id);
-          const res = await axios.put(`/task/edit/${id}`,{status},{
+          const res = await axios.put(`https://to-do-app-backend-zeta.vercel.app/api/task/edit/${id}`,{status},{
             withCredentials: true,
           })
 
@@ -78,7 +78,7 @@ export default function Dashboard() {
         const handleDelete = async(id)=>{
           // return console.log(id);
           try {
-            const res = await axios.delete(`/task/delete/${id}`,{
+            const res = await axios.delete(`https://to-do-app-backend-zeta.vercel.app/api/task/delete/${id}`,{
               withCredentials: true,
           });
           // alert(res.data.message)
@@ -89,7 +89,7 @@ export default function Dashboard() {
 
         const handleUpdate = async(id)=>{
                 try {
-                  const res = await axios.put(`/task/edit/${taskId}`,{name, description},{
+                  const res = await axios.put(`https://to-do-app-backend-zeta.vercel.app/api/task/edit/${taskId}`,{name, description},{
                     withCredentials: true,
                 });
                 // alert(res.data.message)
@@ -106,7 +106,7 @@ export default function Dashboard() {
         useEffect(() => {
           const fetchData = async () => {
               try {
-                  const res = await axios.get("/task",{
+                  const res = await axios.get("https://to-do-app-backend-zeta.vercel.app/api/task",{
                       withCredentials: true,
                   });
                   // console.log(res.data.tasks);

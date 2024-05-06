@@ -11,7 +11,7 @@ export default function Navbar({user}) {
   //  const res =  await axios.get('http://localhost:3000/api/auth/logout',{
   //     withCredentials: true
   //   })
-   const res =  await axios.get('/auth/logout',{
+   const res =  await axios.get('https://to-do-app-backend-zeta.vercel.app/api/auth/logout',{
       withCredentials: true
     })
 

@@ -13,7 +13,7 @@ const [user, setUser] = useState({});
 
 useEffect(()=>{
   const getUser =  async ()=>{
-    const res =  await axios.get("/auth/login/success",{
+    const res =  await axios.get("https://to-do-app-backend-zeta.vercel.app/api/auth/login/success",{
      withCredentials: true,
    })
   //  console.log(res);
@@ -46,7 +46,7 @@ const handlelogin = async(e)=>{
 
 const handleGoogle = async(e)=>{
 
-  const googleLoginURL = "/auth/google"
+  const googleLoginURL = "https://to-do-app-backend-zeta.vercel.app/api/auth/google"
 
 // _blank opens new window
   const newWindow = window.open(googleLoginURL,"_self");

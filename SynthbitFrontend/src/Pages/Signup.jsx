@@ -12,7 +12,7 @@ export default function Signup() {
 
 const handlelogin = async(e)=>{
   e.preventDefault();
-  const res = await axios.post("/auth/signup",{email, username, password},{
+  const res = await axios.post("https://to-do-app-backend-zeta.vercel.app/api/auth/signup",{email, username, password},{
     withCredentials: true,
   })
 
