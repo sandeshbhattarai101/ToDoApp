@@ -21,6 +21,9 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+app.options('*', (req, res) => {
+  res.status(200).end();
+});
 
 dotenv.config();
 
