@@ -17,7 +17,7 @@ const app = express();
 const corsOptions = {
   // origin: "http://localhost:5173",
    origin: "https://to-do-app-mu-liart.vercel.app",
-   methods: ["POST","GET", "PUT", "DELETE", "OPTIONS"],
+   methods: ["POST","GET", "PUT", "DELETE"],
   credentials: true,
 };
 app.use(cors(corsOptions));
