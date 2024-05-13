@@ -9,7 +9,7 @@ import passport from "passport";
 import authRoute from "./Route/authRoute.js";
 import taskRoute from "./Route/taskRoute.js";
 import userRoute from "./Route/userRoute.js";
-import "../SynthbitBackend/passport.js"
+import "./passport.js"
 
 const app = express();
 
